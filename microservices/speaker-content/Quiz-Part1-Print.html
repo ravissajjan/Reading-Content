@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quizzes</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 11.5pt;
+    line-height: 1.45;
+    color: #000;
+    max-width: 180mm;
+    margin: 0 auto;
+  }
+
+  h1 { font-size: 20pt; margin: 0 0 2pt; }
+  h2 { font-size: 14pt; margin: 0 0 10pt; font-weight: normal; color: #333; }
+  h3 {
+    font-size: 13pt;
+    margin: 0 0 2pt;
+    padding-bottom: 4pt;
+    border-bottom: 1.5pt solid #000;
+  }
+
+  .sheet { page-break-after: always; }
+  .sheet:last-child { page-break-after: auto; }
+
+  .meta { font-size: 10pt; color: #444; margin: 0 0 14pt; }
+
+  .rules {
+    border: 1pt solid #999;
+    padding: 8pt 12pt;
+    margin: 12pt 0 16pt;
+    font-size: 10.5pt;
+  }
+  .rules p { margin: 4pt 0; }
+
+  .namebar {
+    margin: 14pt 0 0;
+    font-size: 11pt;
+    border-top: 1pt solid #000;
+    padding-top: 8pt;
+  }
+  .namebar span { display: inline-block; margin-right: 24pt; }
+
+  .q { margin: 0 0 11pt; page-break-inside: avoid; }
+  .q p { margin: 0 0 4pt; font-weight: bold; }
+
+  ol.opts { list-style: none; margin: 0; padding: 0 0 0 14pt; }
+  ol.opts li { margin: 1pt 0; }
+  ol.opts li::before {
+    content: "";
+    display: inline-block;
+    width: 10pt; height: 10pt;
+    border: 1pt solid #555;
+    border-radius: 50%;
+    margin-right: 7pt;
+    vertical-align: -1pt;
+  }
+  .lbl { font-weight: bold; margin-right: 4pt; }
+
+  code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 10.5pt;
+    background: #f0f0f0;
+    padding: 0 2pt;
+  }
+
+  .score {
+    float: right;
+    font-size: 11pt;
+    font-weight: bold;
+    border: 1pt solid #000;
+    padding: 3pt 10pt;
+  }
+
+  /* blank spacer - line-height rather than height, so Word honours it too */
+  .gap { margin: 0; line-height: 26pt; }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER / QUIZ 1 ===== -->
+<div class="sheet">
+  <h1>System Design for Modern Microservices</h1>
+
+  <div class="rules">
+    <p><strong>Four quizzes, one at the end of each session. Five questions each.</strong></p>
+    <p>Tick one answer per question. Mark your own sheet &mdash; the answers are read out after each quiz.</p>
+    <p><strong>Score yourself:</strong> 5/5 excellent &middot; 4/5 solid &middot; 3/5 review the notes.</p>
+  </div>
+
+  <div class="namebar">
+    <span>Name: ___________________________</span>
+    <span>Total: ___________ / 20</span>
+    <span>Date: ____/____/________</span>
+  </div>
+
+  <h3 style="margin-top:22pt;"><span class="score">____ / 5</span>Quiz 1 &mdash; Introduction to Microservices</h3>
+  <p class="meta">After Session 1</p>
+
+  <div class="q">
+    <p>1. What most accurately defines a monolith?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>One codebase deployed as a single unit</li>
+      <li><span class="lbl">b)</span>Badly written or poorly structured code</li>
+      <li><span class="lbl">c)</span>An application that does not use a database</li>
+      <li><span class="lbl">d)</span>Any application older than five years</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>2. A team of four is building their first product and has no users yet. What is usually the right choice?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>Microservices, so they never have to go through a migration later on</li>
+      <li><span class="lbl">b)</span>Microservices, because that is what modern engineering teams do</li>
+      <li><span class="lbl">c)</span>A monolith, because it is simpler and they do not yet know the boundaries</li>
+      <li><span class="lbl">d)</span>One service per developer, so everyone owns their own deployable</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>3. Two features always change together and always ship together. They should most likely be:</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>In two services, so they can stay independent</li>
+      <li><span class="lbl">b)</span>In the same service, deployed as one unit</li>
+      <li><span class="lbl">c)</span>In two services sharing a single database</li>
+      <li><span class="lbl">d)</span>In the API gateway, which calls both</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>4. Which is a genuine advantage of microservices?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>There is less total code to write than in a monolith</li>
+      <li><span class="lbl">b)</span>There are fewer moving parts that can fail at runtime</li>
+      <li><span class="lbl">c)</span>Debugging a request across the system becomes easier</li>
+      <li><span class="lbl">d)</span>You can scale and deploy one part without touching the rest</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>5. &ldquo;Database per service&rdquo; means:</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>Every service is required to use a different database product from all of the others</li>
+      <li><span class="lbl">b)</span>Each service owns its own data and other services cannot reach into it directly</li>
+      <li><span class="lbl">c)</span>Each service needs its own physical server to store that data on</li>
+      <li><span class="lbl">d)</span>Every database must be duplicated so that a backup always exists</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== QUIZ 2 ===== -->
+<div class="sheet">
+  <h3><span class="score">____ / 5</span>Quiz 2 &mdash; Architectural Patterns</h3>
+  <p class="meta">After Session 2 &nbsp;&middot;&nbsp; Name: ______________________________</p>
+
+  <div class="q">
+    <p>1. What is the main job of an API Gateway?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>To store the application&rsquo;s data on behalf of every service</li>
+      <li><span class="lbl">b)</span>To give clients a single entry point in front of many private services</li>
+      <li><span class="lbl">c)</span>To remove the need for any service to use a database</li>
+      <li><span class="lbl">d)</span>To compile and package the application before it is deployed to production</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>2. In <code>CATALOG_URL: http://catalog:3001</code>, what is <code>catalog</code>?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>A fixed IP address, written into the configuration</li>
+      <li><span class="lbl">b)</span>A folder on disk that the gateway reads from</li>
+      <li><span class="lbl">c)</span>A service name, resolved by the platform&rsquo;s DNS</li>
+      <li><span class="lbl">d)</span>A username that the gateway authenticates with</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>3. You stopped the recommendations service and the shop kept selling books. This is called:</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>Graceful degradation</li>
+      <li><span class="lbl">b)</span>Load balancing</li>
+      <li><span class="lbl">c)</span>Horizontal scaling</li>
+      <li><span class="lbl">d)</span>Service discovery</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>4. Why does the gateway put a 1-second timeout on the recommendations call?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>To reduce the amount of network traffic the system pays for</li>
+      <li><span class="lbl">b)</span>To keep the gateway code shorter and easier to read</li>
+      <li><span class="lbl">c)</span>So one slow service cannot make every page slow and eventually take the site down</li>
+      <li><span class="lbl">d)</span>Because the HTTP specification requires that every request carries a timeout value</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>5. Stopping <code>catalog</code> broke the whole page, but stopping <code>recommendations</code> did not. The reason is:</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>Catalog was written in a different programming language from the other three services</li>
+      <li><span class="lbl">b)</span>Catalog is essential, and the team decided no useful fallback exists for it</li>
+      <li><span class="lbl">c)</span>Recommendations has fewer lines of code, so it matters less to the system</li>
+      <li><span class="lbl">d)</span>Catalog was started first, so it holds the network connection open</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== QUIZ 3 ===== -->
+<div class="sheet">
+  <h3><span class="score">____ / 5</span>Quiz 3 &mdash; Containerization &amp; Orchestration</h3>
+  <p class="meta">After Session 3 &nbsp;&middot;&nbsp; Name: ______________________________</p>
+
+  <div class="q">
+    <p>1. What is the relationship between an image and a container?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>They are two words for the same thing</li>
+      <li><span class="lbl">b)</span>An image is a running copy of a container</li>
+      <li><span class="lbl">c)</span>A container is a running copy of an image</li>
+      <li><span class="lbl">d)</span>An image runs inside a container</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>2. In a Dockerfile, what does <code>FROM node:22-alpine</code> do?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>Downloads your source code into the image being built</li>
+      <li><span class="lbl">b)</span>Starts from an existing image that already has Node installed</li>
+      <li><span class="lbl">c)</span>Sets the port that the application will listen on</li>
+      <li><span class="lbl">d)</span>Runs the application once the image has finished building successfully</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>3. You killed a container in this workshop&rsquo;s Compose setup and it stayed dead. Why?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>The image became corrupted at the moment the container was killed</li>
+      <li><span class="lbl">b)</span>Compose needs root privileges before it is allowed to restart anything</li>
+      <li><span class="lbl">c)</span>Compose only restarts stopped containers on a fixed schedule that it runs periodically</li>
+      <li><span class="lbl">d)</span>No restart policy is set, and Compose will not maintain a number of healthy copies</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>4. Which correctly matches the Kubernetes objects?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>Pod = a running container &middot; Deployment = keeps N pods alive &middot; Service = a stable address</li>
+      <li><span class="lbl">b)</span>Pod = a physical machine &middot; Deployment = a container &middot; Service = a database</li>
+      <li><span class="lbl">c)</span>Pod = a stable address &middot; Deployment = a physical machine &middot; Service = a running container</li>
+      <li><span class="lbl">d)</span>They are three different names for the same underlying object in the API</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>5. The gateway&rsquo;s <code>CATALOG_URL</code> was unchanged when you moved from Compose to Kubernetes. Why does that matter?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>It does not matter, it was a coincidence of how the lab was written</li>
+      <li><span class="lbl">b)</span>Because both platforms resolve service names, so the application code is portable</li>
+      <li><span class="lbl">c)</span>Because Kubernetes reads the same docker-compose.yml file directly when it starts up</li>
+      <li><span class="lbl">d)</span>Because the IP address of the catalog service happened to stay the same</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== QUIZ 4 ===== -->
+<div class="sheet">
+  <h3><span class="score">____ / 5</span>Quiz 4 &mdash; Practices &amp; Production</h3>
+  <p class="meta">After Session 4 &nbsp;&middot;&nbsp; Name: ______________________________</p>
+
+  <div class="q">
+    <p>1. You deleted a pod and a new one appeared by itself. Which object made that happen?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>The Pod</li>
+      <li><span class="lbl">b)</span>The Service</li>
+      <li><span class="lbl">c)</span>The Deployment</li>
+      <li><span class="lbl">d)</span>The container image</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>2. &ldquo;Desired state&rdquo; means:</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>The state that the system was in the last time it was known to be working correctly</li>
+      <li><span class="lbl">b)</span>You declare what you want, and the platform continuously repairs reality to match</li>
+      <li><span class="lbl">c)</span>A backup of the cluster taken immediately before a deployment</li>
+      <li><span class="lbl">d)</span>The final step of a rolling update, once every pod is replaced</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>3. You scaled <code>catalog</code> to 5 and left <code>orders</code> at 1. What is the point?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>Catalog is a far more important service than orders, so it deserves more of the cluster resources</li>
+      <li><span class="lbl">b)</span>Kubernetes schedules more efficiently when a Deployment has an odd number of pods</li>
+      <li><span class="lbl">c)</span>You can give capacity to the busy part without paying for the rest &mdash; impossible in a monolith</li>
+      <li><span class="lbl">d)</span>Having more pods of any service makes every future deployment complete faster</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>4. What does a rolling update do?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>Replaces instances gradually so the service stays available throughout</li>
+      <li><span class="lbl">b)</span>Stops every instance, then starts them all again on the new version</li>
+      <li><span class="lbl">c)</span>Rolls the database back to the state it was in the previous day</li>
+      <li><span class="lbl">d)</span>Applies updates only during a scheduled weekend maintenance window</li>
+    </ol>
+  </div>
+
+  <div class="q">
+    <p>5. Which is the strongest reason NOT to adopt microservices?</p>
+    <ol class="opts">
+      <li><span class="lbl">a)</span>Writing the application code itself takes noticeably longer than it would in an equivalent monolith</li>
+      <li><span class="lbl">b)</span>They use more disk space and memory than an equivalent monolith would use</li>
+      <li><span class="lbl">c)</span>Your team is small, the boundaries are unclear, and the operational cost exceeds the benefit</li>
+      <li><span class="lbl">d)</span>They cannot be run at all without Kubernetes or a managed cloud provider</li>
+    </ol>
+  </div>
+
+  <p class="gap">&nbsp;</p>
+
+  <div class="namebar">
+    <span>Quiz 1: ___ /5</span>
+    <span>Quiz 2: ___ /5</span>
+    <span>Quiz 3: ___ /5</span>
+    <span>Quiz 4: ___ /5</span>
+    <span><strong>Total: ____ / 20</strong></span>
+  </div>
+</div>
+
+</body>
+</html>
